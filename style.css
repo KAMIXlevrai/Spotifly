@@ -1,0 +1,154 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+  }
+  
+  h1 {
+    color: #1db954;
+    margin-bottom: 2em;
+  }
+  
+  #albums {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .album {
+    background-color: #181818;
+    border-radius: 15px;
+    padding: 1em;
+    width: 250px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+  }
+
+  .album {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .album .preview {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .album .tracklist {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .album.open .tracklist {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  
+  .album:hover {
+    transform: scale(1.03);
+  }
+  
+  .album img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .album h2 {
+    margin: 1em 0 0.5em;
+    color: #1db954;
+  }
+  
+  .album ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .album li {
+    padding: 10px;
+    background-color: #282828;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .album li:hover {
+    background-color: #1db954;
+    color: black;
+  }
+  
+  #custom-player {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e1e;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .track-info {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  #play-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #progress-bar {
+    flex: 1;
+    appearance: none;
+    height: 5px;
+    border-radius: 5px;
+    background: #444;
+    outline: none;
+  }
+  
+  #progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    background: #1db954;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  
