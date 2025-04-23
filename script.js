@@ -49,4 +49,17 @@ const slider = document.querySelector('.level');
 slider.addEventListener('input', function() {
   audio.volume = slider.value;
 });  
-  
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", () => {
+  const audioSrc = audio.currentSrc;
+  const fileName = audioSrc.split("/").pop();
+
+  const link = document.createElement("a");
+  link.href = audioSrc;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
